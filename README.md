@@ -69,22 +69,3 @@ The frontend application will run on http://localhost:5173.
 
 4. Open your browser and navigate to http://localhost:5173
 
-## How It Works
-
-1. Users enter their name to log in
-2. The seat map displays all available and booked seats
-3. Users can select an available seat and book it
-4. All connected users see the updated seat status in real-time
-5. Users can release their own booked seats
-
-## Concurrency Handling
-
-The system handles concurrency through Socket.IO's real-time communication:
-
-- When a user books a seat, the server checks if it's already booked
-- If the seat is available, it's marked as booked and all clients are notified
-- If another user tries to book the same seat simultaneously, the server will reject the second request
-
-## License
-
-MIT 
