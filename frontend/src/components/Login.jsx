@@ -23,7 +23,12 @@ const Login = ({ setUser, backendUrl }) => {
       setUser(response.data)
     } catch (err) {
       console.error('Login error:', err)
-      setError(err.response?.data?.error || 'Failed to login. Please try again.')
+      if (err.response?.status === 409) {
+        // Username already in use
+        setError(err.response.data.error || 'This username is already taken. Please choose another one.')
+      } else {
+        setError(err.response?.data?.error || 'Failed to login. Please try again.')
+      }
     } finally {
       setLoading(false)
     }

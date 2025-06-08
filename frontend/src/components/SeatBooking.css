@@ -28,6 +28,11 @@
   color: white;
 }
 
+.notification.warning {
+  background-color: #f39c12;
+  color: white;
+}
+
 .seat-map {
   width: 100%;
   max-width: 800px;
@@ -85,6 +90,36 @@
   color: white;
 }
 
+.seat.locked {
+  background-color: #f39c12;
+  color: white;
+  cursor: not-allowed;
+  animation: pulse 1.5s infinite;
+}
+
+.seat.your-lock {
+  background-color: #3498db;
+  color: white;
+  animation: pulse 1.5s infinite;
+}
+
+.seat.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
 .seat.selected {
   border: 2px solid var(--primary-color);
   transform: scale(1.05);
@@ -95,6 +130,7 @@
   justify-content: center;
   gap: 1.5rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
 .legend-item {
@@ -120,6 +156,14 @@
 
 .seat-sample.your-seat {
   background-color: var(--secondary-color);
+}
+
+.seat-sample.locked {
+  background-color: #f39c12;
+}
+
+.seat-sample.your-lock {
+  background-color: #3498db;
 }
 
 .seat-sample.selected {
